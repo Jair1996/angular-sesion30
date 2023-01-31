@@ -1,0 +1,54 @@
+<form autocomplete="off" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+  <div class="mb-3">
+    <label for="txtName" class="form-label">Nombre</label>
+    <input
+      [class.is-invalid]="isTheFieldInvalid('name')"
+      formControlName="name"
+      type="text"
+      class="form-control"
+      id="txtName"
+      />
+      <div class="invalid-feedback">De 3 a 25 caracteres</div>
+    </div>
+    <div class="mb-3">
+      <label for="txtLastname" class="form-label">Apellido</label>
+      <input
+      [class.is-invalid]="isTheFieldInvalid('lastname')"
+      formControlName="lastname"
+      type="text"
+      class="form-control"
+      id="txtLastname"
+      />
+      <div class="invalid-feedback">De 2 caracteres a mas</div>
+    </div>
+    <div class="mb-3">
+      <label for="txtEmail" class="form-label">Email</label>
+      <input
+      [class.is-invalid]="isTheFieldInvalid('email')"
+      formControlName="email"
+      type="text"
+      class="form-control"
+      id="txtEmail"
+      />
+      <div class="invalid-feedback">Formato de email inválido</div>
+    </div>
+    <div class="mb-3">
+      <label for="txtWebsite" class="form-label">Website</label>
+      <input
+      [class.is-invalid]="isTheFieldInvalid('website')"
+      formControlName="website"
+      type="text"
+      class="form-control"
+      id="txtWebsite"
+    />
+    <div class="invalid-feedback">Es requerido</div>
+  </div>
+
+  <button
+    [disabled]="registerForm.invalid"
+    type="submit"
+    class="btn btn-primary"
+  >
+    Registrar
+  </button>
+</form>
